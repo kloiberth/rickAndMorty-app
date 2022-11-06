@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300;1,600&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --title: #cb3db6;
+    --text: #c17dd9;
+    --container: #120e11;
+
+}
+.App{
+    height: 100%;
+}
+body{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* display flex */
+.flex__card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.flex__p{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+}
+
+/* square */
+.square{
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    left: 94px;
+    top: 19px;
+}
+
+/* banner */
+.banner__img{
+    background-image: url('./assets/img/banner3.jpg');
+    height: 250px;
+   /*  background-position: 50% 15%; */ /* para laptop */
+    background-size: cover;
+}
+
+/* contents */
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+.title{
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--title);
+}
+.cont-input{
+    position: relative;
+    margin: 0 auto;
+}
+.input__warning{
+    position: absolute;
+    color: #ff000a;
+    align-items: center;
+    top: -14px;
+    left: 75px;
+}
+.cont-input>input{
+    display: inline-block;
+    text-align: center;
+    width: 19rem;
+    height: 1.5rem;
+    color: var(--text);
+    outline: none;
+    border-style: none;
+    background-color: var(--container);
+}
+.input__btn{
+    display: inline-block;
+    border-style: none;
+    width: 50px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: #330f1e;
+    color: #e2e2e2;
+    margin-left: 2px;
+}
+.container__info{
+    background-color: var(--container);
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+  
+}
+.title-location{
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--title);
+}
+.info-location{
+    display: flex;
+    justify-content: space-around;
+}
+.info-location p{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text);
+}
+
+.info-location p>span{
+    color: var(--title);
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* resident*/
+.resident__container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
+.resident__card{
+    width: 95%;
+    box-shadow: 3px 3px 9px #c17dd9;
+    background-color: var(--container);
+    border-radius: 20px;
+    padding: 10px 0;
+    margin: 0.5rem auto;
+    transition: transform .2s linear;
+}
+.resident__title{
+    color: var(--title);
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.resident__img{
+    border-radius: 10px;
+    width: 80%;
+    height: 150px;
+    margin-bottom: 10px;
+}
+.resident__info{
+    position: relative;
+}
+.resident__info p{
+    color: var(--text);
+    font-weight: 400;
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+.resident__info p>span{
+    color: var(--title);
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+@media screen and (min-width: 768px){
+.square{
+    width: 10px;
+    height: 10px;
+    left: 155px;
+    top: 32px;
+}
+    /* banner */
+.banner__img{
+     background-position: 35% 35%; /* para 768px */
+}
+.title{
+    font-size: 2.5rem;
+}
+.cont-input>input{
+    width: 27rem;
+}
+.input__btn{
+    width: 55px;
+    height: 30px;
+}
+.container__info{
+    width: 90%;
+}
+.title-location{
+    font-size: 30px;
+}
+.info-location p>span{
+    font-size: 18px;
+}
+.info-location p{
+    font-size: 1.6rem;
+}
+.resident__card{
+    width: 300px;
+    padding: 12px 0;
+}
+.resident__title{
+    font-size: 1.5rem;
+}
+.resident__img{
+    width: 180px;
+    height: 153px;
+}
+.resident__info p>span{
+    font-size: 1.3rem;
+}
+.resident__info p{
+    font-size: 1.2rem;
+}
+}
+
+@media screen and (min-width: 1320px){
+    .banner__img{
+         background-position: 50% 15%; 
+    }
+    .title{
+        margin-bottom: 1rem;
+    }
+    .input__warning{
+        top: -1.5rem;
+        left: 18.5rem;
+    }
+    .cont-input>input{
+        width: 45rem;
+        height: 2rem;
+    }
+    .input__btn{
+        width: 4rem;
+        height: 2.2rem;
+    }
+    .info-location p>span{
+        font-size: 1.6rem;
+    }
+    .info-location p{
+        font-size: 1.4rem;
+    }
+    .resident__container{
+        grid-template-columns: repeat(3,1fr);
+        gap: 1.8rem;
+    }
+    .resident__card{
+        margin-bottom: 2rem;
+    }
+    .resident__card:hover{
+        transform: scale(1.1);
+       
+    }
+    .resident__title {
+        font-size: 1.3rem;
+    }
+}
