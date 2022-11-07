@@ -276,6 +276,7 @@ body{
         width: 30rem;
         margin-bottom: 2rem;
         padding: 10px;
+        box-shadow: none;
       
     }
     .resident__title{
@@ -303,7 +304,7 @@ body{
     /* HOVER */
     .resident__card:hover{
         transform: scale(1.1);
-        box-shadow: none;
+        box-shadow: 3px 3px 9px #c17dd9;
        
     }
     .resident__card:hover > .resident__status{
