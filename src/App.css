@@ -127,7 +127,6 @@ body{
 .resident__container{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 10px;
 }
 .resident__card{
     width: 11rem;
