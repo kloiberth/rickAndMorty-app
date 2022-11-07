@@ -147,15 +147,12 @@ body{
 .resident__status{
     background-color: rgba(18, 17, 25, .9 );
     position: absolute;
-    top: 39px;
+    top: 154px;
     right: 16px;
     display: flex;
-    gap: .5rem;
     text-align: center;
     align-items: center;
-    border-top-right-radius: 5px;
-    padding: 2px;
-         
+    padding: 2px 3px;
 }
 .status__info{
     font-size: .8rem;
@@ -189,7 +186,7 @@ body{
 }
     /* banner */
 .banner__img{
-     background-position: 35% 35%; /* para 768px */
+     background-position: 35% 35%; 
 }
 .title{
     font-size: 2.5rem;
@@ -219,6 +216,9 @@ body{
 }
 .resident__title{
     font-size: 1.5rem;
+}
+.resident__status {
+    right: 47px;
 }
 .resident__img{
     width: 180px;
@@ -284,17 +284,30 @@ body{
         font-size: 1.5rem;
     
     }
+   .resident__status{
+        visibility: hidden;
+        top: 60px;
+        right: 310px;
+        border-top-right-radius: 5px;
+        transition: 0.2s ease;
+    }
+    
     .resident__img {
         width: 10rem;
         height: 13rem;
         grid-area: imagen;
     }
-
-    .resident__card:hover{
-        transform: scale(1.1);
-       
-    }
     .resident__info{
         grid-area: info;
+    }
+
+    /* HOVER */
+    .resident__card:hover{
+        transform: scale(1.1);
+        box-shadow: none;
+       
+    }
+    .resident__card:hover > .resident__status{
+        visibility: visible;
     }
 }

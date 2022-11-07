@@ -9,12 +9,12 @@ const Contents = () => {
 
 	useEffect(() =>{
 
-		axios.get(`https://rickandmortyapi.com/api/location/${ /* Math.floor(Math.random() * 126) + 1 */1 }`)
+		axios.get(`https://rickandmortyapi.com/api/location/${ Math.floor(Math.random() * 126) + 1 }`)
 		.then(res => setLocation(res.data))
 	}, []);
 
 	const searchLocation = () => {
-         axios.get(`https://rickandmortyapi.com/api/location/${1}`)
+         axios.get(`https://rickandmortyapi.com/api/location/${text}`)
 		.then(res => setLocation(res.data))
  
 	}
@@ -25,9 +25,11 @@ const Contents = () => {
             <div className="container">
                 <h1 className="title">Rick and Morty</h1>
                 <div className="cont-input">
-                     {text > 126 && <p className="input__warning">please enter the correct id</p>}
+                     {/* compara el id introducido*/text > 126 && <p className="input__warning">please enter the correct id</p>}
                     <input type="text" placeholder="type an id between 1 and 126" value={text} onChange={e => setText(e.target.value)}/>
-                    <button onClick={searchLocation} className="input__btn" style={{visibility: text > 126 && "hidden"}}>search</button>
+                    <button onClick={searchLocation} className="input__btn" style={{visibility: text > 126 && "hidden"}}>
+                    <i className="fa-sharp fa-solid fa-magnifying-glass"></i>
+                    </button>
                 </div>
 
                 <div className="container__info">

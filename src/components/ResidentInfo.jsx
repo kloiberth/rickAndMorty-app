@@ -16,6 +16,7 @@ const ResidentInfo = ({url}) => {
         <>
         <div className="resident__card flex__card grid__card">
             {
+                /* compara el status */
              resident.status === "Alive"
                 ? (
                     <div className="resident__status">
