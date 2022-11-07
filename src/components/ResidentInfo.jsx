@@ -5,22 +5,6 @@ const ResidentInfo = ({url}) => {
 
     const[resident, setResident] = useState({});
 
-    const getStatus = () => {
-        if(resident.status === "Alive") {
-            return(
-                <div className="square" style={{background: "green"}}></div>
-            )
-        } else if(resident.status === "Dead") {
-            return(
-                <div className="square" style={{background: "red"}}></div>
-            )
-        } else{
-            return(
-                <div className="square" style={{background: "grey"}}></div>
-            )
-        }
-    }
-
     useEffect(() => {
 
         axios.get(url)
@@ -30,25 +14,34 @@ const ResidentInfo = ({url}) => {
 
     return (
         <>
-        <div className="resident__card flex__card">
+        <div className="resident__card flex__card grid__card">
+            {
+             resident.status === "Alive"
+                ? (
+                    <div className="resident__status">
+                        <div className="square" style={{background: "green"}}></div>
+                        <p className="status__info">Alive</p>
+                    </div>
+                ) : resident.status === "Dead"? (
+                    <div className="resident__status">
+                        <div className="square" style={{background: "red"}}></div>
+                        <p className="status__info">Dead</p>
+                    </div>
+                ) : (
+                    <div className="resident__status">
+                        <div className="square" style={{background: "grey"}}></div>
+                       <p className="status__info">Unknown</p> 
+                    </div>
+                )
+            }
             <h2 className="resident__title">{resident.name}</h2>
 
             <img src={resident.image} alt={resident.name} className="resident__img"/>
 
             <div className="resident__info">
-                <p className="flex__p"><span>Status:</span> {resident.status}</p> {
-                    resident.status === "Alive"
-                    ? (
-                        <div className="square" style={{background: "green"}}></div>
-                    ) : resident.status === "Dead"? (
-                        <div className="square" style={{background: "red"}}></div>
-                    ) : (
-                        <div className="square" style={{background: "gray"}}></div>
-                    )
-                }
                 <p className="flex__p"><span>Species:</span> {resident.species}</p>
                 <p className="flex__p"><span>Origin:</span> {resident.origin?.name}</p>
-                <p className="flex__p"><span>amounts that appears:</span>{resident.episode?.length}</p>
+                <p className="flex__p"><span>amounts that appears:</span> {resident.episode?.length}</p>
             </div>
         </div>
         </>

@@ -9,12 +9,12 @@ const Contents = () => {
 
 	useEffect(() =>{
 
-		axios.get(`https://rickandmortyapi.com/api/location/${ Math.floor(Math.random() * 126) + 1}`)
+		axios.get(`https://rickandmortyapi.com/api/location/${ /* Math.floor(Math.random() * 126) + 1 */1 }`)
 		.then(res => setLocation(res.data))
 	}, []);
 
 	const searchLocation = () => {
-         axios.get(`https://rickandmortyapi.com/api/location/${text}`)
+         axios.get(`https://rickandmortyapi.com/api/location/${1}`)
 		.then(res => setLocation(res.data))
  
 	}
